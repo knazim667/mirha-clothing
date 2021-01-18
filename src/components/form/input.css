@@ -18,11 +18,6 @@
 .group .form-input:focus {
   outline: none;
 }
-.group .form-input:focus ~ .form-input-label {
-  top: -14px;
-  font-size: 12px;
-  color: black;
-}
 input[type="password"] {
   letter-spacing: 0.3em;
 }
@@ -36,6 +31,11 @@ input[type="password"] {
   left: 5px;
   top: 10px;
   transition: 300ms ease all;
+}
+.form-input:focus ~ .form-input-label {
+  top: -14px;
+  font-size: 12px;
+  color: black;
 }
 .form-input-label.shrink {
   top: -14px;

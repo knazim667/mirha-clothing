@@ -21,6 +21,12 @@ class Form extends Component {
     this.setState({ data });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.data);
+    this.doSubmit();
+  };
+
   renderInput = (label, type = "text", name) => {
     return (
       <Input

@@ -1,9 +1,12 @@
 import React from "react";
 import "./button.css";
 
-const Button = ({ title, btnClass, type }) => {
+const Button = ({ title, isGoogleSignIn, ...otherProps }) => {
   return (
-    <button className={`btn ${btnClass}`} type={`${type ? type : "button"}`}>
+    <button
+      className={`${isGoogleSignIn ? "btn-primary" : ""} btn`}
+      {...otherProps}
+    >
       {title}
     </button>
   );
