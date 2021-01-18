@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.header .logo-container {
+  width: 70px;
+  height: 100%;
+  padding: 25px;
+  text-transform: uppercase;
+}
+.header .nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+}
+.header .nav-items .item {
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
