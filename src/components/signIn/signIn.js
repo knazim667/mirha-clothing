@@ -4,7 +4,7 @@ import Button from "../button/button";
 import Form from "../form/form";
 import "./signIn.css";
 
-import { signInWithGoogle } from "../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../firebase/firebase.utils";
 
 class SignIn extends Form {
   constructor(props) {
@@ -16,23 +16,21 @@ class SignIn extends Form {
       },
     };
   }
-  doSubmit = () => {
+  doSubmit = async () => {
     const { data } = this.state;
-    axios
-      .get("http://localhost:4000/users")
-      .then((res) => {
-        let value = res.data;
-        let result = value.find(
-          (val) => val.email === data.email && val.password === data.password
-        );
-        if (!result) {
-          console.log("Please use valid email id");
-        } else {
-          sessionStorage.setItem("user", result.id);
-          window.location = "/shop";
-        }
-      })
-      .catch((err) => err.message);
+    const { email, password } = data;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({
+        data: {
+          email: "",
+          password: "",
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   render() {
     return (
