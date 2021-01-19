@@ -1,10 +1,15 @@
-import { SET_CURRENT_USER, TOGGLE_CART_HIDDEN } from "./types";
+import ActionTypes from "./types";
 
 export const setCurrentUser = (user) => ({
-  type: SET_CURRENT_USER,
+  type: ActionTypes.SET_CURRENT_USER,
   payload: user,
 });
 
 export const toggleCartHidden = () => ({
-  type: TOGGLE_CART_HIDDEN,
+  type: ActionTypes.TOGGLE_CART_HIDDEN,
+});
+
+export const addItem = (item) => ({
+  type: ActionTypes.ADD_ITEM,
+  payload: item,
 });

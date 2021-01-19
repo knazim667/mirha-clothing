@@ -15,6 +15,7 @@ const Collections = ({ title, items }) => {
               imageUrl={item.imageUrl}
               name={item.name}
               price={item.price}
+              item={item}
             />
           ))}
       </div>
