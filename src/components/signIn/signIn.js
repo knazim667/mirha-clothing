@@ -47,6 +47,7 @@ class SignIn extends Form {
               isGoogleSignIn
               onClick={signInWithGoogle}
               title={"Sign with Google"}
+              type="button"
             />
           </div>
         </form>

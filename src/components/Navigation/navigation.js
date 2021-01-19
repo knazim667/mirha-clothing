@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import { auth } from "../firebase/firebase.utils";
+import { connect } from "react-redux";
 import "./navigation.css";
 
 class Navigation extends Component {
@@ -45,5 +46,7 @@ class Navigation extends Component {
     );
   }
 }
-
-export default Navigation;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+export default connect(mapStateToProps)(Navigation);
