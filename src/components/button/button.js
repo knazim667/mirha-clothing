@@ -1,10 +1,12 @@
 import React from "react";
 import "./button.css";
 
-const Button = ({ title, isGoogleSignIn, ...otherProps }) => {
+const Button = ({ title, isGoogleSignIn, inverted, ...otherProps }) => {
   return (
     <button
-      className={`${isGoogleSignIn ? "btn-primary" : ""} btn`}
+      className={`${inverted ? "inverted" : ""} ${
+        isGoogleSignIn ? "btn-primary" : ""
+      } btn`}
       {...otherProps}
     >
       {title}
