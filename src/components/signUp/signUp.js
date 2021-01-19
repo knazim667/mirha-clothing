@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { auth, createUserProfileDocument } from "../firebase/firebase.utils";
 import Form from "../form/form";

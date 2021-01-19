@@ -6,18 +6,6 @@ import { connect } from "react-redux";
 import "./navigation.css";
 
 class Navigation extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     user: null,
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   const user = sessionStorage.getItem("user");
-  //   this.setState({ user });
-  // }
-
   render() {
     const { currentUser } = this.props;
     return (
