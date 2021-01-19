@@ -4,10 +4,12 @@ import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import { auth } from "../firebase/firebase.utils";
 import { connect } from "react-redux";
 import "./navigation.css";
+import CartIcon from "../carticon/cartIcon";
+import CartDropdown from "../cartDropdown/cartDropdown";
 
 class Navigation extends Component {
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, hidden } = this.props;
     return (
       <div className="header">
         <Link to="/" className="logo-container">
@@ -29,12 +31,15 @@ class Navigation extends Component {
               <Link to="/signIn">login</Link>
             </div>
           )}
+          <CartIcon />
         </div>
+        {hidden ? null : <CartDropdown />}
       </div>
     );
   }
 }
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
 export default connect(mapStateToProps)(Navigation);

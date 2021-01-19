@@ -41,8 +41,8 @@ class Categories extends Component {
     const { categories } = this.state;
     return (
       <div className="categories">
-        {categories.map(({ title, imageUrl, size }) => (
-          <ProductCard title={title} size={size} imageUrl={imageUrl} />
+        {categories.map(({ title, imageUrl, size, id }) => (
+          <ProductCard key={id} title={title} size={size} imageUrl={imageUrl} />
         ))}
       </div>
     );
