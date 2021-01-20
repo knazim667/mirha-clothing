@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import { auth } from "../firebase/firebase.utils";
 import { connect } from "react-redux";
+import { selectCartHidden, selectCurrentUser } from "../../redux/cart.utils";
 import "./navigation.css";
 import CartIcon from "../carticon/cartIcon";
 import CartDropdown from "../cartDropdown/cartDropdown";
@@ -38,8 +39,8 @@ class Navigation extends Component {
     );
   }
 }
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-  currentUser,
-  hidden,
+const mapStateToProps = (state) => ({
+  currentUser: selectCurrentUser(state),
+  hidden: selectCartHidden(state),
 });
 export default connect(mapStateToProps)(Navigation);
