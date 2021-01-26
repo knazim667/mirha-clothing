@@ -1,9 +1,9 @@
-import ActionTypes from "../actions/types";
+import ActionTypes from "../../actions/types";
 import {
   addItemToCart,
   clearItemFromCh,
   removeItemfromCart,
-} from "../redux/cart.utils";
+} from "../../redux/cart.utils";
 
 const INITIAL_STATE = {
   hidden: true,

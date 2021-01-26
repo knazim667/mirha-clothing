@@ -10,13 +10,7 @@ const Collections = ({ title, items }) => {
         {items
           .filter((item, index) => index < 4)
           .map((item) => (
-            <CollectionItems
-              key={item.id}
-              imageUrl={item.imageUrl}
-              name={item.name}
-              price={item.price}
-              item={item}
-            />
+            <CollectionItems item={item} />
           ))}
       </div>
     </div>

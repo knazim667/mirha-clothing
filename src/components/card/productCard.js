@@ -1,9 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./productCard.css";
 
-const ProductCard = ({ title, imageUrl, size }) => {
+const ProductCard = ({ title, imageUrl, size, history, linkUrl, match }) => {
+  console.log("macth url", linkUrl);
   return (
-    <div className={`${size} menu-item`}>
+    <div
+      className={`${size} menu-item`}
+      onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
       <div
         className="background-image"
         style={{ backgroundImage: `url(${imageUrl})` }}
@@ -16,4 +21,4 @@ const ProductCard = ({ title, imageUrl, size }) => {
   );
 };
 
-export default ProductCard;
+export default withRouter(ProductCard);

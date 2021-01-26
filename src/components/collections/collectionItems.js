@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { addItem } from "../../actions/actions";
 import "./collectionItem.css";
 
-const CollectionItems = ({ imageUrl, name, price, addItem, item }) => {
+const CollectionItems = ({ item, addItem }) => {
+  const { imageUrl, name, price } = item;
   return (
     <div className="collection-item">
       <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />

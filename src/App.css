@@ -2,10 +2,7 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   padding: 10px 60px;
 }
-.App {
-  width: 80%;
-  margin: 0 auto;
-}
+
 .homepage {
   display: flex;
   flex-direction: column;

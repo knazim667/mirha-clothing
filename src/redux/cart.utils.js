@@ -33,37 +33,15 @@ export const clearItemFromCh = (cartItems, item) => {
   return updateCartItems;
 };
 
-const selectCart = (state) => state.cart;
 const selectUser = (state) => state.user;
+const selectCategory = (state) => state.category;
 
-export const selectCartItems = createSelector(
-  [selectCart],
-  (cart) => cart.cartItems
-);
-
-export const selectCartHidden = createSelector(
-  [selectCart],
-  (cart) => cart.hidden
-);
 export const selectCurrentUser = createSelector(
   [selectUser],
   (user) => user.currentUser
 );
-export const selectCartItemsCount = createSelector(
-  [selectCartItems],
-  (cartItems) =>
-    cartItems.reduce(
-      (accumalator, currentItem) => accumalator + currentItem.quantity,
-      0
-    )
-);
 
-export const selectCartItemsTotal = createSelector(
-  [selectCartItems],
-  (cartItems) =>
-    cartItems.reduce(
-      (accumalator, currentItem) =>
-        accumalator + currentItem.quantity * currentItem.price,
-      0
-    )
+export const selectCategoryItems = createSelector(
+  [selectCategory],
+  (category) => category.sections
 );

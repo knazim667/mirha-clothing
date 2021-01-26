@@ -1,7 +1,10 @@
 import React from "react";
 import "./checkout.css";
 import { connect } from "react-redux";
-import { selectCartItems, selectCartItemsTotal } from "../../redux/cart.utils";
+import {
+  selectCartItems,
+  selectCartItemsTotal,
+} from "../../reducer/cartReducer/cartSelecter";
 import CheckoutItem from "../../components/checkout/checkoutItem";
 
 const Checkout = ({ cartItems, total }) => {

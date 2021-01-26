@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../button/button";
 import { connect } from "react-redux";
-import { selectCartItems } from "../../redux/cart.utils";
+import { selectCartItems } from "../../reducer/cartReducer/cartSelecter";
 import { toggleCartHidden } from "../../actions/actions";
 import "./cartDropdown.css";
 import CartItem from "./cartItems";
