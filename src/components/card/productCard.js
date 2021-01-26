@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./productCard.css";
 
 const ProductCard = ({ title, imageUrl, size, history, linkUrl, match }) => {
-  console.log("macth url", linkUrl);
   return (
     <div
       className={`${size} menu-item`}

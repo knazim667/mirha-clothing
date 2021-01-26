@@ -16,7 +16,7 @@ const Collections = ({ title, items, history, match, linkUrl }) => {
         {items
           .filter((item, index) => index < 4)
           .map((item) => (
-            <CollectionItems item={item} />
+            <CollectionItems key={item.id} item={item} />
           ))}
       </div>
     </div>
